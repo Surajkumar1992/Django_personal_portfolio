@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+    <div class="container text-centre">
+        <h1>Welcome to Suraj's Blog</h1>
+        {% for blog in blogs %}
+            <br>
+            <h2> {{ blog.title }} </h2>
+            <h2> {{ blog.datetime }} </h2>
+            <h3>{{ blog.description }} </h3>
+        {% endfor %}
+    </div>
+</body>
+</html>
