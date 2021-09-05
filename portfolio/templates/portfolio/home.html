@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Portfolio Homepage</title>
-</head>
-<body style="background-color: red">
-     <center>
+{% extends 'portfolio/base.html' %}
+{% block content %}
        <h1> Welcome to Portfolio </h1>
+         <br>
          {% load static %}
-         <img src="{% static 'portfolio/Suraj.jpeg' %}" height="400">
+         <a href="{% url 'blog:blogs' %}">Blogs</a>
+         <br>
+         <img src="{% static 'portfolio/Suraj.jpeg' %}" height="550" width="450">
          <br>
          <a href="{% static 'portfolio/SurajKumarBiswal_Resume.pdf' %}">Resume</a>
          <h2> {% for project in projects %}
@@ -26,6 +23,5 @@
              {% endif %}
              {% endfor %}
          </h2>
-     </center>
-</body>
-</html>
+
+{% endblock %}
