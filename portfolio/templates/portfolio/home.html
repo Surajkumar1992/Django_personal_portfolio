@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <title>Portfolio Homepage</title>
 </head>
-<body>
+<body style="background-color: red">
      <center>
        <h1> Welcome to Portfolio </h1>
+         {% load static %}
+         <img src="{% static 'portfolio/Suraj.jpeg' %}" height="400">
+         <br>
+         <a href="{% static 'portfolio/SurajKumarBiswal_Resume.pdf' %}">Resume</a>
          <h2> {% for project in projects %}
              {{ project.title }}
              <br>
