@@ -1,27 +1,31 @@
 {% extends 'portfolio/base.html' %}
 {% block content %}
-       <h1> Welcome to Portfolio </h1>
-         <br>
+<center>
+    <br>
+       <h1> Welcome to <b>Suraj's</b> Portfolio </h1>
          {% load static %}
-         <a href="{% url 'blog:blogs' %}">Blogs</a>
          <br>
-         <img src="{% static 'portfolio/Suraj.jpeg' %}" height="550" width="450">
+         <img src="{% static 'portfolio/Suraj.jpeg' %}" height="400" width="500">
          <br>
-         <a href="{% static 'portfolio/SurajKumarBiswal_Resume.pdf' %}">Resume</a>
-         <h2> {% for project in projects %}
-             {{ project.title }}
-             <br>
-             {{ project.description }}
-             <br>
-             <br>
-             <br>
-             <img src="{{ project.image.url }}", height=500>
-             <br>
-             <br>
-             {% if project.url %}
-             <a href="{{ project.url }}"> Project Link </a>
-             {% endif %}
-             {% endfor %}
-         </h2>
-
+            <br>
+    <h2> Hi, I am <b>Suraj Kumar Biswal</b> and I work as a <b>Cloud and Infrastructure Engineer.</b> </h2>
+        <br>
+    <a href="{% url 'blog:blogs' %}"><h1><b>Live Projects</b></h1></a>
+    <br>
+    <div class="row row-cols-4 row-cols-md-4 g-4">
+    {% for project in projects %}
+            <div class="col">
+                <div class="card" style="width: 21rem;">
+                    <img class="card-img-top" src="{{ project.image.url }}" height="200" width="100">
+                    <div class="card-body">
+                        <h2 class="card-title"><a href="{% url 'blog:detail' project.id %}"><b>{{ project.title }}</b></a></h2>
+                        <p class="card-text"><b>{{ project.description }}</b></p>
+                    </div>
+                </div>
+            </div>
+    {% endfor %}
+    </div>
+</center>
 {% endblock %}
+
+
