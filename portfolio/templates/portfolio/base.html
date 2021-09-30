@@ -11,12 +11,11 @@
     <title>Portfolio</title>
   </head>
   {% load static %}
-  <body background="../../static/portfolio/devopsimages.jpeg">
-    <nav class="navbar navbar-expand-lg navbar-dark">
+  <body background=light>
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
   <div class="container-fluid" >
-
-      <img src="{% static 'portfolio/DevOps.png' %}" height="60" width="80">&nbsp;&nbsp;&nbsp;
-    <a class="navbar-brand" href="{% url 'home' %}" ><h3>Suraj Kumar Biswal</h3></a>
+      <img src="{% static 'portfolio/DevOps.png' %}" height="60" width="80">
+    <a class="navbar-brand" href="{% url 'home' %}" ><h3>&nbsp;Suraj Kumar Biswal</h3></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -34,7 +33,7 @@
       </ul>
     </div>
   </div>
-</nav>
+    </nav>
     {% block content %}{% endblock %}
     <!-- Optional JavaScript; choose one of the two! -->
 
